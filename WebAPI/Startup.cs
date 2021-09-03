@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebAPI.Database;
+using WebAPI.Repositories;
 using WebAPI.Services;
 
 namespace WebAPI
@@ -25,7 +26,11 @@ namespace WebAPI
 
             services.AddApiVersioning();
 
+            //services
             services.AddScoped<PersonService>();
+
+            //repositories
+            services.AddScoped<IPersonRepository, PersonRepository>();
 
             var connection = Configuration["ConnectionStrings:MySQLConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
