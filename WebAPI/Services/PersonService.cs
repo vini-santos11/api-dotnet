@@ -10,8 +10,8 @@ namespace WebAPI.Services
 {
     public class PersonService
     {
-        private readonly IPersonRepository _personRepository;
-        public PersonService(IPersonRepository personRepository)
+        private readonly IRepository<Person> _personRepository;
+        public PersonService(IRepository<Person> personRepository)
         {
             _personRepository = personRepository;
         }

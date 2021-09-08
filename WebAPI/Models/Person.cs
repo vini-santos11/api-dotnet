@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using WebAPI.Model.Base;
 
 namespace WebAPI.Model
 {
     [Table("person")]
-    public class Person
+    public class Person : BaseEntity
     {
-        [Column("id")]
-        public long Id { get; set; }
         [Column("first_name")]
         public string FirstName { get; set; }
         [Column("last_name")]

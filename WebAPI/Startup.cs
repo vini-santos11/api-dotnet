@@ -42,6 +42,8 @@ namespace WebAPI
             //services
             services.AddScoped<PersonService>();
 
+            //AbstractRepository
+            services.AddScoped(typeof(IRepository<>), typeof(AbstractRepository<>));
             //repositories
             services.AddScoped<IPersonRepository, PersonRepository>();
 
