@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebAPI.Database;
+﻿using System.Collections.Generic;
 using WebAPI.Model;
 using WebAPI.Repositories;
 
@@ -10,8 +6,8 @@ namespace WebAPI.Services
 {
     public class PersonService
     {
-        private readonly IRepository<Person> _personRepository;
-        public PersonService(IRepository<Person> personRepository)
+        private readonly IPersonRepository _personRepository;
+        public PersonService(IPersonRepository personRepository)
         {
             _personRepository = personRepository;
         }
